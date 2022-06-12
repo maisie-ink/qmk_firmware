@@ -54,9 +54,9 @@ enum custom_keycodes {
   N9, // 9️⃣
   L_Q, // 🏳️‍🌈
   L_W, // 🤷‍♀️
-  L_T, // 💁‍♀️
+      // L_T, // 💁‍♀️
   L_U, // ☝️
-  L_B, // ‼️
+      // L_B, // ‼️
 };
 
 enum unicode_names {
@@ -112,6 +112,7 @@ enum unicode_names {
 
   L_E,
   L_R,
+  L_T,
   L_Y,
   L_I,
   L_O,
@@ -130,6 +131,7 @@ enum unicode_names {
   L_X,
   L_C,
   L_V,
+  L_B,
   L_N,
   L_M,
   L_LESS,
@@ -191,35 +193,46 @@ const uint32_t PROGMEM unicode_map[] = {
   [N7] = 0x277c, // ❼
   [N8] = 0x1d7e0, // 𝟠,
 
-  [L_E] = 0x1f92f, // 🤯
-  [L_R] = 0x1f60c, // 😌
+      // [L_E] = 0x1f92f, // 🤯
+  [L_E] = 0x2248, // ≈
+      // [L_R] = 0x1f60c, // 😌
+  [L_R] = 0xae, // ®
+  [L_T] = 0x2122, // ™
   [L_Y] = 0x1f44d, // 👍
-  [L_I] = 0x1f607, // 😇
+      // [L_I] = 0x1f607, // 😇
+  [L_I] = 0x221e, // ∞
   [L_O] = 0x1f605, // 😅
   [L_P] = 0x1f97a, // 🥺
   [L_A] = 0x1f614, // 😔
   [L_S] = 0x1f62d, // 😭
-  [L_D] = 0x1f495, // 💕
+      // [L_D] = 0x1f495, // 💕
+  [L_D] = 0xb0, // °
   [L_F] = 0x1f496, // 💖
   [L_G] = 0x1f49a, // 💚
   [L_H] = 0x1f64c, // 🙌
   [L_J] = 0x1f602, // 😂
   [L_K] = 0x1f431, // 🐱
-  [L_L] = 0x1f973, // 🥳
+      // [L_L] = 0x1f973, // 🥳
+  [L_L] = 0x3bb, // λ
   [L_SEMI] = 0x1f389, // 🎉
   [L_Z] = 0x2705, // ✅
   [L_X] = 0x274c, // ❌
-  [L_C] = 0x1f44f, // 👏
+      // [L_C] = 0x1f44f, // 👏
+  [L_C] = 0xa9, // ©
   [L_V] = 0x1f338, // 🌸
+  [L_B] = 0x2022, // •
   [L_N] = 0x1f44e, // 👎
   [L_M] = 0x1f648, // 🙈
-  [L_LESS] = 0x1f4c9, // 📉
-  [L_GREATER] = 0x1f4c8, // 📈
-  [L_QUESTION] = 0x2753, // ❓
+  [L_LESS] = 0x2039, // ‹
+  [L_GREATER] = 0x203a, // ›
+      // [L_QUESTION] = 0x2753, // ❓
+  [L_QUESTION] = 0xf7, // ÷
   [L_BACKTICK] = 0x1f644, // 🙄
   [L_QUOTE] = 0x1f643, // 🙃
-  [L_LBRACKET] = 0x263A, // ☺️
-  [L_RBRACKET] = 0x1F633 // 😳
+      // [L_LBRACKET] = 0x263A, // ☺️
+      // [L_RBRACKET] = 0x1F633 // 😳
+  [L_LBRACKET] = 0x1f4c8, // 📈
+  [L_RBRACKET] = 0x1f4c9 // 📉
 };
 
 
@@ -257,9 +270,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // layer for astrolokeys -- each symbol on the keycaps will produce its character, other keys produce my frequently-used emojis. macOS keyboard input settings must be Unicode Hex Input
   [3] = LAYOUT_ergodox_pretty(
     X(ARIES),      X(N1),          X(N2),          X(N3),          X(N4),          X(N5),           X(VIRGO),                                       X(LIBRA),     X(N6),          X(N7),          X(N8),          N9,             X(N0),          X(SCORPIO),
-    X(TAURUS),     L_Q,            L_W,            X(L_E),         X(L_R),         L_T,             X(MERCURY),                                     X(PLUTO),     X(L_Y),         L_U,            X(L_I),         X(L_O),         X(L_P),         X(SAGITTARIUS),
+    X(TAURUS),     L_Q,            L_W,            X(L_E),         X(L_R),         X(L_T),          X(MERCURY),                                     X(PLUTO),     X(L_Y),         L_U,            X(L_I),         X(L_O),         X(L_P),         X(SAGITTARIUS),
     X(GEMINI),     X(L_A),         X(L_S),         X(L_D),         X(L_F),         X(L_G),                                                                        X(L_H),         X(L_J),         X(L_K),         X(L_L),         X(L_SEMI),      X(CAPRICORN),
-    X(CANCER),     X(L_Z),         X(L_X),         X(L_C),         X(L_V),         L_B,             X(VENUS),                                       X(NEPTUNE),   X(L_N),         X(L_M),         X(L_LESS),      X(L_GREATER),   X(L_QUESTION),  X(AQUARIUS),
+    X(CANCER),     X(L_Z),         X(L_X),         X(L_C),         X(L_V),         X(L_B),          X(VENUS),                                       X(NEPTUNE),   X(L_N),         X(L_M),         X(L_LESS),      X(L_GREATER),   X(L_QUESTION),  X(AQUARIUS),
     X(LEO),        X(L_BACKTICK),  X(L_QUOTE),     X(LEFT),        X(RIGHT),                                                                                                      X(UP),          X(DOWN),        X(L_LBRACKET),  X(L_RBRACKET),  X(PISCES),
                                                                                                     X(MARS),       X(JUPITER),     X(SATURN),       X(URANUS),
                                                                                                                    X(MOON),        X(PLANET),
@@ -338,21 +351,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         SEND_STRING(SS_LALT("d83e+dd37+200d+2640+fe0f")); // 🤷‍♀️
       }
       return false;
+    /*
     case L_T:
       if (record->event.pressed) {
         SEND_STRING(SS_LALT("d83d+dc81+200d+2640+fe0f")); // 💁‍♀️ 0001f481+0000200d+0000264+00000fe0f utf32 -> utf16
       }
       return false;
+    */
     case L_U:
       if (record->event.pressed) {
         SEND_STRING(SS_LALT("261d+fe0f")); // ☝️
       }
       return false;
+    /*
     case L_B:
       if (record->event.pressed) {
         SEND_STRING(SS_LALT("203c+fe0f")); // ‼️
       }
       return false;
+    */
   }
   return true;
 }
